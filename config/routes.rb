@@ -11,4 +11,3 @@ Rails.application.routes.draw do
   get "ideas/edit/:id", to: "ideas#edit", as: "edit_idea"
 end
 
-
