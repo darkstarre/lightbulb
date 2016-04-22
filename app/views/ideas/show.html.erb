@@ -3,3 +3,17 @@
 
 <%= link_to "Edit", edit_idea_path(@idea) %>
 <%= link_to "Delete", destroy_idea_path(@idea), method: 'delete' %>
+
+<h2>Flickers about this idea?:</h2>
+<%= form_for(@comment) do |f| %>
+  <p>
+  <%= f.text_area :body, :cols => "75", :rows => "5" %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+<div>
+  <%= @comments.each do |comment| %>
+    <%= comment.body %>
+  <%end %>
+</div>
