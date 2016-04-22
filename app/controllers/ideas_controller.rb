@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   def index
-    @idea = Idea.all
+    @ideas = Idea.all
   end
 
   def new
@@ -19,20 +19,18 @@ class IdeasController < ApplicationController
   def update
     idea = Idea.find_by(params[:id])
     idea.update(params[:idea].symbolize_keys)
+    redirect_to ideas_path
   end
 
   def edit
     @idea = Idea.find_by(params[:id])
-    redirect_to root_path
   end
 
   def destroy
     Idea.destroy(params[:id])
+    redirect_to ideas_path
   end
 
-  def show
-    @idea = Idea.find_by(params[:id])
-  end
 end
 
 
