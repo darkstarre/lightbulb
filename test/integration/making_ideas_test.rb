@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class MakingIdeasTest < ActionDispatch::IntegrationTest
-
   def test_ideas_can_run_the_gammet_of_crud
     page.visit ideas_path
 
