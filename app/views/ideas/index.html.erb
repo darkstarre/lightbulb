@@ -1,13 +1,13 @@
 
 <% @ideas.each do |idea| %>
-      
+
   <p>
-  <%= link_to idea.id, idea_path(idea), id:'i' %>
+  <%= link_to "Idea:", idea_path(idea), class:'link'%>
   <%= idea.body %>
   </p>
 
 <% end %>
 
 <p>
-<%= link_to "Light up the world with your idea", new_idea_path  %>
+<%= link_to "Light up the world", new_idea_path  %>
 </p>
