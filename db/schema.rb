@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20160422202710) do
     t.integer "idea_id"
     t.string  "body"
   end
-ActiveRecord::Schema.define(version: 20160422194615) do
 
   create_table "ideas", force: :cascade do |t|
     t.string   "body"
