@@ -42,6 +42,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'mrspec'
   gem 'pry'
+  gem 'capybara'
+
 end
 
 group :development do
