@@ -8,10 +8,10 @@ class MakingIdeasTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Light up the world with your idea")
     page.click_link ("Light up the world with your idea")
 
-    assert page.has_content?("Submit Idea")
+    assert page.has_button?("Create Idea")
 
-    fill_in('ideas', :with => 'blah blah blog')
-    page.click_button('Submit')
+    fill_in("idea_body", :with => 'blah blah blog')
+    page.click_button('Create Idea')
 
     assert page.has_content?('blah blah blog')
   end
