@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get "ideas/edit/:id", to: "ideas#edit", as: "edit_idea"
 
   post "/ideas/:idea_id/comments", to: "comments#create", as: "create_comment"
+  get '/auth/twitter', as: 'sign_in'
+  get '/auth/:provider/callback', to: 'session#create'
+  delete '/session', to: 'session#destroy', as: 'sign_out'
 end
 

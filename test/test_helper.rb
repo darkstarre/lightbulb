@@ -4,6 +4,8 @@ require 'rails/test_help'
 
 require 'capybara/rails'
 
+OmniAuth.config.test_mode = true
+
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 end

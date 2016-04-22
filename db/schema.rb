@@ -17,11 +17,17 @@ ActiveRecord::Schema.define(version: 20160422202710) do
     t.integer "idea_id"
     t.string  "body"
   end
+ActiveRecord::Schema.define(version: 20160422194615) do
 
   create_table "ideas", force: :cascade do |t|
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "uid"
   end
 
 end
