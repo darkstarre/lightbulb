@@ -43,10 +43,7 @@ group :development, :test do
   gem 'mrspec'
   gem 'pry'
   gem 'capybara'
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 end
 
 group :development do
