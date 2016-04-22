@@ -4,3 +4,18 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+
+#to make mrspec work
+
+tasks = Rake.application.instance_variable_get('@tasks')
+tasks['test'].clear_actions if tasks['test']
+tasks['spec'].clear_actions if tasks['spec']
+
+mrspec = Proc.new do
+  sh 'mrspec', '--fail-fast'
+end
+
+task :test, &mrspec
+task :spec, &mrspec
+
