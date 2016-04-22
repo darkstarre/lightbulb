@@ -1,5 +1,7 @@
 
 <%= form_for(@idea) do |f| %>
- <%= f.text_field :body %>
+  <p>
+  <%= f.text_area :body, :cols => "100", :rows => "25" %>
+  </p>
   <%= f.submit %>
 <% end %>
