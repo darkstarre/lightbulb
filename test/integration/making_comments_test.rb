@@ -6,15 +6,10 @@ class MakingIdeasTest < ActionDispatch::IntegrationTest
     page.visit idea_path(my_idea)
 
     assert page.has_content?("Comment about me")
-    assert page.has_button?("submit")
+    assert page.has_button?("Create Comment")
     fill_in("comment_body", :with => 'This is a great idea!')
-    page.click_button?("Make a Comment")
+    page.click_button("Create Comment")
     assert page.has_content?('This is a great idea!')
-
-    assert page.has_button?("Change this Comment")
-    fill_in("comment_body", :with => 'This is not a great idea!')
-    page.click_button?("Change this Comment")
-    assert page.has_content?('This is not a great idea!')
 
     assert page.has_button?("Delete this Comment")
     page.click_button?("Delete this Comment")
