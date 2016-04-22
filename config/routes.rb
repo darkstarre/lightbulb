@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   delete "ideas/:id", to: "ideas#destroy", as: "destroy_idea"
 
   get "ideas/edit/:id", to: "ideas#edit", as: "edit_idea"
+
+  get '/auth/twitter', as: 'sign_in'
+  get '/auth/:provider/callback', to: 'session#create'
+  delete '/session', to: 'session#destroy', as: 'sign_out'
 end
 
 
