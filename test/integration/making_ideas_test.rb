@@ -16,14 +16,17 @@ class MakingIdeasTest < ActionDispatch::IntegrationTest
     page.click_button('Create Idea')
     assert page.has_content?('blah blah blog')
 
-    page.click_link('blah blah blog')
+    page.first('.i').click_link('1')
+    assert page.has_content?("Edit")
+    page.click_link('Edit')
     assert page.has_content?("Update Idea")
     fill_in('idea_body', :with => 'blah blah edited blog')
     page.click_button('Update Idea')
 
     assert page.has_content?('blah blah edited blog')
-    assert page.has_content?("Turn off your ideas")
-    assert page.click_first_link("Turn off your ideas")
+    page.first('.i').click_link('1')
+    assert page.has_content?("Delete")
+    assert page.click_first_link("Delete")
 
     refute page.has_content?('blah blah edited blog')
   end

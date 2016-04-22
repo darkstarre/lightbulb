@@ -1,3 +1,13 @@
-<%= link_to "Light up the world with your idea", new_idea_path  %>
 
-<%= link_to "Turn off your ideas", destroy_idea_path %>
+<% @ideas.each do |idea| %>
+      
+  <p>
+  <%= link_to idea.id, idea_path(idea), id:'i' %>
+  <%= idea.body %>
+  </p>
+
+<% end %>
+
+<p>
+<%= link_to "Light up the world with your idea", new_idea_path  %>
+</p>
