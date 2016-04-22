@@ -23,10 +23,15 @@ class IdeasController < ApplicationController
 
   def edit
     @idea = Idea.find_by(params[:id])
+    redirect_to root_path
   end
 
   def destroy
     Idea.destroy(params[:id])
+  end
+
+  def show
+    @idea = Idea.find_by(params[:id])
   end
 end
 
