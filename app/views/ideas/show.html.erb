@@ -20,6 +20,7 @@
   <% @comments.each do |comment| %>
     <p>
     <%= comment.body %>
+    <%= link_to "Delete", delete_comment_path(@idea, comment), method: :delete %> 
     </p>
   <%end %>
 </div>
