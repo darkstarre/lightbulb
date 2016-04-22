@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   delete "ideas/:id", to: "ideas#destroy", as: "destroy_idea"
 
   get "ideas/edit/:id", to: "ideas#edit", as: "edit_idea"
+
+  post "/ideas/:idea_id/comments", to: "comments#create", as: "create_comment"
 end
 

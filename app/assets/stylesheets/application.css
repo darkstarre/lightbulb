@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.background {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/00/Tantalum_light_bulb.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}

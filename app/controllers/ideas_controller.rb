@@ -9,7 +9,9 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
-    @comment = Comment.new
+    @comment = @idea.comments.new
+    @comments = @idea.comments.all
+    
   end
 
   def create
