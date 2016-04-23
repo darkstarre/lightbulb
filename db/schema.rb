@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160422202710) do
 
   create_table "ideas", force: :cascade do |t|
     t.string   "body"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
