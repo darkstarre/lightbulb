@@ -9,19 +9,24 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+    @user = User.find_by_id(@idea.user_id)
     @comment = @idea.comments.new
     @comments = @idea.comments.all
-    
+
   end
 
   def create
-    @idea = Idea.create(:body => params[:idea]["body"])
+    @idea = current_user.ideas.create(:body => params[:idea]["body"])
     redirect_to ideas_path(@idea)
   end
 
   def update
     idea = Idea.find_by(params[:id])
-    idea.update(params[:idea].symbolize_keys)
+    if current_user.id == idea.user_id
+      idea.update(params[:idea].symbolize_keys)
+    else
+      raise "Error"
+    end
     redirect_to ideas_path
   end
 
