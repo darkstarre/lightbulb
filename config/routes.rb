@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   patch "ideas/:id", to: "ideas#update", as: "update_idea"
   delete "ideas/:id", to: "ideas#destroy", as: "destroy_idea"
 
-  get "ideas/edit/:id", to: "ideas#edit", as: "edit_idea"
+  get "ideas/:id/edit", to: "ideas#edit", as: "edit_idea"
 
   post "/ideas/:idea_id/comments", to: "comments#create", as: "create_comment"
   match "/ideas/:idea_id/comments/:id", to: "comments#destroy", as: "delete_comment", via: [:get, :delete]

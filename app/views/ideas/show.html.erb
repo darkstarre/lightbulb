@@ -2,16 +2,18 @@
 <h3><%= @user.name %></h3>
 <p>Idea: <%= @idea.body %></p>
 
-<%  if current_user.uid == @user.uid %>
-  <%= link_to "Edit", edit_idea_path(@idea) %>
-  <%= link_to "Delete", destroy_idea_path(@idea), method: 'delete' %>
+<%  if current_user %>
+  <%  if current_user.uid == @user.uid %>
+    <%= link_to "Edit", edit_idea_path(@idea) %>
+    <%= link_to "Delete", destroy_idea_path(@idea), method: 'delete' %>
+  <% end %>
 <% end %>
 
 <h2>Flickers about this idea?</h2>
 
 <%= form_for(@comment, url: create_comment_path(@idea)) do |f| %>
   <p>
-  <%= f.text_area :body, :cols => "50", :rows => "5" %>
+  <%= f.text_area :body, :cols => "50", :rows => "5"%>
   </p>
   <%= f.submit %>
 <% end %>

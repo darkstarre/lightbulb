@@ -19,3 +19,40 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+body {
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #000 1px 1px 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #f00;
+  font-size: 30px;
+}
+
+.sign_in_out {
+  text-align: left;
+}
+
+a:link {
+  color: #fff;
+}
+
+#comment_body {
+  font-size: 25px;
+}
+
+#idea_body {
+  font-size: 25px;
+}

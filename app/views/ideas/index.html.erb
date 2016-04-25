@@ -2,7 +2,9 @@
 <% @ideas.each do |idea| %>
 
   <p>
-  <%= link_to "Idea:", idea_path(idea), class:'link'%>
+  <%= link_to "Idea", idea_path(idea), class:'link'%>
+  </p>
+  <p>
   <%= idea.body %>
   </p>
 
