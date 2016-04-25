@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+  before_action :require_login, only: [:update, :destroy]
+
   def index
     @ideas = Idea.all
   end
@@ -16,17 +18,17 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = current_user.ideas.create(:body => params[:idea]["body"])
+    if (current_user)
+      @idea = current_user.ideas.create(:body => params[:idea]["body"])
+    else
+      @idea = anonymous_user.ideas.create(body: params[:idea]["body"])
+    end
     redirect_to ideas_path(@idea)
   end
 
   def update
     idea = Idea.find_by(params[:id])
-    if current_user.id == idea.user_id
-      idea.update(params[:idea].symbolize_keys)
-    else
-      raise "Error"
-    end
+    idea.update(params[:idea].symbolize_keys)
     redirect_to ideas_path
   end
 

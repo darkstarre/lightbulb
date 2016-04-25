@@ -7,15 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class = "background">
+  <div class="sign_in_out">
+    <% if signed_in? %>
+      <%= link_to 'Sign Out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', sign_in_path %>
+    <% end %>
+  </div>
 
 <%= yield %>
-
-
-<% if signed_in? %>
-  <%= link_to 'Sign Out', sign_out_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign In', sign_in_path %>
-<% end %>
-
 </body>
 </html>
